@@ -77,7 +77,7 @@
 
     
 </body>
-<script src=" https://smtpjs.com/v3/smtp.js"></script>
+<!-- <script src=" https://smtpjs.com/v3/smtp.js"></script>
 <script>
     function sendmail(){
 		Email.send({}).then(
@@ -94,6 +94,26 @@ function showmenu(){
 function hidemenu(){
     navLinks.style.right="-200px";
 }
+</script> -->
+<script>
+    function sendmail() {
+        var yourName = document.getElementById("yourname").value;
+        var emailAddress = document.getElementById("emailaddress").value;
+        var message = document.getElementById("phone").value;
+
+        var subject = "Contact Form Submission from " + yourName;
+        var body = "Name: " + yourName ;
+        body += "\nEmail: " + emailAddress;
+        body += "\nMessage: " + message;
+
+        var mailtoLink = "mailto:akashbhilwande@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+
+        // Open the user's email client with the pre-filled email
+        window.location.href = mailtoLink;
+
+        // Optionally, you can also show an alert message
+        alert("Your Message Is Successful - Team MYC");
+    }
 </script>
 
 </html>
